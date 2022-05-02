@@ -54,7 +54,7 @@ namespace BankApp
             AccountBlockade = true;
             return AccountBlockade;
         }
-        public bool UnBlockAccount()
+        public bool UnblockAccount()
         {
             AccountBlockade = false;
             return AccountBlockade;
