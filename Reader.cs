@@ -12,14 +12,23 @@ namespace BankApp
         private readonly string userPath = @"D:/Programowanie/csharp/console/BankApp/BankApp/osoby.csv";
         private readonly string accountPath = @"D:/Programowanie/csharp/console/BankApp/BankApp/konta.csv";
 
-        public Reader()
+        public void userFile()
+        {
+            string[] readText = File.ReadAllLines(userPath);
+
+            foreach (string text in readText)
+            {
+                Console.WriteLine(text);
+            } 
+        }
+        public void accountFile()
         {
             string[] readText = File.ReadAllLines(accountPath);
 
             foreach (string text in readText)
             {
                 Console.WriteLine(text);
-            }
+            } 
         }
     }
 }

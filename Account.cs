@@ -21,6 +21,7 @@ namespace BankApp
         {
             AccountId = Guid.NewGuid();
             AccountNumber = new AccountNumberGenerator().Generate();
+            AccountBlockade = false;
         }
 
         public void Display()

@@ -29,7 +29,6 @@ namespace BankApp
 
             AccountCurrency = accountCurrency;
             AccountBalance = accountBalance;
-            AccountBlockade = false;
         }
 
         public void Display()
