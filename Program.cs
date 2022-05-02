@@ -12,10 +12,14 @@ namespace BankApp
                 AccountCurrencyEnum.PLN, 1259);
             Account account = new();
             Reader reader = new();
-            
+
+            Console.WriteLine();
             user.Display();
+            Console.WriteLine("\n --------------------------------------- \n");
             account.Display();
+            Console.WriteLine("\n --------------------------------------- \n");
             reader.userFile();
+            Console.WriteLine("\n --------------------------------------- \n");
             reader.accountFile();
         }
     }

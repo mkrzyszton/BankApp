@@ -13,8 +13,8 @@ namespace BankApp
     {
         protected readonly StringBuilder AccountNumber;
         protected Guid AccountId;
-        protected static AccountCurrencyEnum AccountCurrency;
-        protected static decimal AccountBalance;
+        protected AccountCurrencyEnum AccountCurrency;
+        protected decimal AccountBalance;
         protected bool AccountBlockade;
 
         public Account()
