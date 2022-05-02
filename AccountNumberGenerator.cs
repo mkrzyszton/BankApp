@@ -6,11 +6,8 @@ namespace BankApp;
 public class AccountNumberGenerator : Random
 {
    private readonly StringBuilder _stringBuilder = new();
-   private int Number
-   {
-      get => Next(0, 10);
-   }
-   
+   private int Number => Next(0, 10);
+
    public StringBuilder Generate()
    {
       for (int i = 0; i < 11; i++)

@@ -18,9 +18,9 @@ namespace BankApp
             Console.WriteLine("\n --------------------------------------- \n");
             account.Display();
             Console.WriteLine("\n --------------------------------------- \n");
-            reader.userFile();
+            reader.UserFile();
             Console.WriteLine("\n --------------------------------------- \n");
-            reader.accountFile();
+            reader.AccountFile();
         }
     }
 }

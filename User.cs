@@ -31,7 +31,7 @@ namespace BankApp
             AccountBalance = accountBalance;
         }
 
-        public void Display()
+        public new void Display()
         {
             Console.WriteLine($"{_userId};{_userForename};{_userSurname};{_userPesel};{_userCity};{_userAddress}");
         }

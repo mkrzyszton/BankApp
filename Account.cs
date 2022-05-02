@@ -11,22 +11,22 @@ namespace BankApp
 {
     public class Account
     {
-        protected readonly StringBuilder AccountNumber;
-        protected Guid AccountId;
+        private readonly StringBuilder _accountNumber;
+        private readonly Guid _accountId;
         protected AccountCurrencyEnum AccountCurrency;
         protected decimal AccountBalance;
         protected bool AccountBlockade;
 
         public Account()
         {
-            AccountId = Guid.NewGuid();
-            AccountNumber = new AccountNumberGenerator().Generate();
+            _accountId = Guid.NewGuid();
+            _accountNumber = new AccountNumberGenerator().Generate();
             AccountBlockade = false;
         }
 
         public void Display()
         {
-            Console.WriteLine($"{AccountNumber};{AccountId};{AccountCurrency};{AccountBalance};{AccountBlockade}");
+            Console.WriteLine($"{_accountNumber};{_accountId};{AccountCurrency};{AccountBalance};{AccountBlockade}");
         }
     }
 }
