@@ -1,0 +1,15 @@
+D:\Programowanie\csharp\console\BankApp\BankApp\bin\Debug\net6.0\BankApp.exe
+D:\Programowanie\csharp\console\BankApp\BankApp\bin\Debug\net6.0\BankApp.deps.json
+D:\Programowanie\csharp\console\BankApp\BankApp\bin\Debug\net6.0\BankApp.runtimeconfig.json
+D:\Programowanie\csharp\console\BankApp\BankApp\bin\Debug\net6.0\BankApp.dll
+D:\Programowanie\csharp\console\BankApp\BankApp\bin\Debug\net6.0\BankApp.pdb
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\BankApp.csproj.AssemblyReference.cache
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\BankApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\BankApp.AssemblyInfoInputs.cache
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\BankApp.AssemblyInfo.cs
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\BankApp.csproj.CoreCompileInputs.cache
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\BankApp.dll
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\refint\BankApp.dll
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\BankApp.pdb
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\BankApp.genruntimeconfig.cache
+D:\Programowanie\csharp\console\BankApp\BankApp\obj\Debug\net6.0\ref\BankApp.dll
