@@ -21,6 +21,7 @@ namespace BankApp
                 Console.WriteLine(text);
             } 
         }
+        
         public void accountFile()
         {
             string[] readText = File.ReadAllLines(accountPath);
