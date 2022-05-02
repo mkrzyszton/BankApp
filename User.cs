@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,36 +10,31 @@ namespace BankApp
 {
     public class User : Account
     {
-        private int userId;
-        // User
-        private string userForename;
-        // User
-        private string userSurname;
-        //max char(11), gen
-        private long userPesel;
-        //enum
-        private string userCity;
-        private string userAddress;
+        private readonly Guid _userId;
+        private readonly string _userForename;
+        private readonly string _userSurname;
+        private readonly long _userPesel;
+        private readonly string _userCity;
+        private readonly string _userAddress;
 
-        public User(int userId, string userForename, string userSurname, long userPesel, string userCity, string userAddress,
-            AccountCurrencyEnum AccountCurrency, decimal AccountBalance)
+        public User(string userForename, string userSurname, long userPesel, string userCity, string userAddress,
+            AccountCurrencyEnum accountCurrency, decimal accountBalance)
         {
-            this.userId = userId;
-            this.userForename = userForename;
-            this.userSurname = userSurname;
-            this.userPesel = userPesel;
-            this.userCity = userCity;
-            this.userAddress = userAddress;
-            Account.AccountCurrency = AccountCurrency;
-            Account.AccountBalance = AccountBalance;
-            AccountNumber = new AccountNumberGenerator();
-            AccountId = userId;
+            _userId = Guid.NewGuid();
+            _userForename = userForename;
+            _userSurname = userSurname;
+            _userPesel = userPesel;
+            _userCity = userCity;
+            _userAddress = userAddress;
+
+            AccountCurrency = accountCurrency;
+            AccountBalance = accountBalance;
             AccountBlockade = false;
         }
 
         public void Display()
         {
-            Console.WriteLine($"{userId};{userForename};{userSurname};{userPesel};{userAddress}");
+            Console.WriteLine($"{_userId};{_userForename};{_userSurname};{_userPesel};{_userCity};{_userAddress}");
         }
         
         public decimal PayIn(decimal deposit)

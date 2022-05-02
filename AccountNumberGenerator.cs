@@ -1,19 +1,23 @@
 ﻿using System.Security.Cryptography;
+using System.Text;
 
 namespace BankApp;
 
 public class AccountNumberGenerator : Random
 {
+   private readonly StringBuilder _stringBuilder = new();
    private int Number
    {
       get => Next(0, 10);
    }
-
-   public AccountNumberGenerator()
+   
+   public StringBuilder Generate()
    {
       for (int i = 0; i < 11; i++)
       {
-         Console.Write(Number);
+         _stringBuilder.Append(Number);
       }
+
+      return _stringBuilder;
    }
 }
