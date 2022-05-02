@@ -49,9 +49,14 @@ namespace BankApp
             return AccountBalance;
         }
 
-        public bool BlockAccount(bool status)
+        public bool BlockAccount()
         {
-            AccountBlockade = status;
+            AccountBlockade = true;
+            return AccountBlockade;
+        }
+        public bool UnBlockAccount()
+        {
+            AccountBlockade = false;
             return AccountBlockade;
         }
     }
