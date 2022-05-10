@@ -8,56 +8,35 @@ using System.Threading.Tasks;
 
 namespace BankApp
 {
-    public class User : Account
+    public class User
     {
-        private readonly Guid _userId;
+        // public readonly Guid UserId;
+        public int UserId;
         private readonly string _userForename;
         private readonly string _userSurname;
         private readonly long _userPesel;
         private readonly string _userCity;
         private readonly string _userAddress;
 
-        public User(string userForename, string userSurname, long userPesel, string userCity, string userAddress,
-            AccountCurrencyEnum accountCurrency, decimal accountBalance)
+        public User(int userId, string userForename, string userSurname, long userPesel, string userCity, string userAddress)
         {
-            _userId = Guid.NewGuid();
+            // UserId = Guid.NewGuid();
+            UserId = userId;
             _userForename = userForename;
             _userSurname = userSurname;
             _userPesel = userPesel;
             _userCity = userCity;
             _userAddress = userAddress;
-
-            AccountCurrency = accountCurrency;
-            AccountBalance = accountBalance;
         }
 
-        public new void Display()
+        public void Display()
         {
-            Console.WriteLine($"{_userId};{_userForename};{_userSurname};{_userPesel};{_userCity};{_userAddress}");
-        }
-        
-        public decimal PayIn(decimal deposit)
-        {
-            AccountBalance += deposit;
-            return AccountBalance;
-        }
-        
-        public decimal PayOut(decimal draw)
-        {
-            AccountBalance -= draw;
-            return AccountBalance;
+            Console.WriteLine($"{UserId};{_userForename};{_userSurname};{_userPesel};{_userCity};{_userAddress}");
         }
 
-        public bool BlockAccount()
+        public void DisplayAllAccounts()
         {
-            AccountBlockade = true;
-            return AccountBlockade;
-        }
-        
-        public bool UnblockAccount()
-        {
-            AccountBlockade = false;
-            return AccountBlockade;
+            Program.accountList.Where(e => e.UserId == UserId).ToList().ForEach(e => e.Display());
         }
     }
 }

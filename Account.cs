@@ -11,22 +11,48 @@ namespace BankApp
 {
     public class Account
     {
-        private readonly StringBuilder _accountNumber;
-        private readonly Guid _accountId;
-        protected AccountCurrencyEnum AccountCurrency;
-        protected decimal AccountBalance;
-        protected bool AccountBlockade;
+        private readonly StringBuilder? _accountNumber;
+        public readonly int UserId;
+        private readonly AccountCurrencyEnum _accountCurrency;
+        private decimal _accountBalance;
+        private bool _accountBlockade;
 
-        public Account()
+        public Account(AccountCurrencyEnum accountCurrency, decimal accountBalance, User userId)
         {
-            _accountId = Guid.NewGuid();
+            _accountCurrency = accountCurrency;
+            _accountBalance = accountBalance;
+            UserId = userId.UserId;
             _accountNumber = new AccountNumberGenerator().Generate();
-            AccountBlockade = false;
+            _accountBlockade = false;
         }
 
         public void Display()
         {
-            Console.WriteLine($"{_accountNumber};{_accountId};{AccountCurrency};{AccountBalance};{AccountBlockade}");
+            Console.WriteLine($"{_accountNumber};{UserId};{_accountCurrency};{_accountBalance};{_accountBlockade}");
+        }
+
+        public decimal PayIn(decimal deposit)
+        {
+            _accountBalance += deposit;
+            return _accountBalance;
+        }
+
+        public decimal PayOut(decimal draw)
+        {
+            _accountBalance -= draw;
+            return _accountBalance;
+        }
+
+        public bool BlockAccount()
+        {
+            _accountBlockade = true;
+            return _accountBlockade;
+        }
+
+        public bool UnblockAccount()
+        {
+            _accountBlockade = false;
+            return _accountBlockade;
         }
     }
 }

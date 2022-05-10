@@ -14,22 +14,16 @@ namespace BankApp
 
         public void UserFile()
         {
-            string[] readText = File.ReadAllLines(userPath);
+            List<string> readText = new List<string>(File.ReadLines(userPath));
 
-            foreach (string text in readText)
-            {
-                Console.WriteLine(text);
-            } 
+            readText.ForEach(e => Console.WriteLine(e));
         }
         
         public void AccountFile()
         {
-            string[] readText = File.ReadAllLines(accountPath);
-
-            foreach (string text in readText)
-            {
-                Console.WriteLine(text);
-            } 
+            List<string> readText = new List<string>(File.ReadLines(accountPath));
+            
+            readText.ForEach(e => Console.WriteLine(e));
         }
     }
 }
