@@ -11,7 +11,7 @@ namespace BankApp
 {
     public class Account
     {
-        private readonly StringBuilder? _accountNumber;
+        private readonly string _accountNumber;
         public readonly int UserId;
         private readonly AccountCurrencyEnum _accountCurrency;
         private decimal _accountBalance;

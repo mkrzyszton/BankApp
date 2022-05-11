@@ -8,13 +8,13 @@ public class AccountNumberGenerator : Random
    private readonly StringBuilder _stringBuilder = new();
    private int Number => Next(0, 10);
 
-   public StringBuilder Generate()
+   public string Generate()
    {
       for (int i = 0; i < 11; i++)
       {
          _stringBuilder.Append(Number);
       }
 
-      return _stringBuilder;
+      return _stringBuilder.ToString();
    }
 }
