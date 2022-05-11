@@ -36,7 +36,7 @@ namespace BankApp
 
         public void DisplayAllAccounts()
         {
-            Program.accountList.Where(e => e.UserId == UserId).ToList().ForEach(e => e.Display());
+            AccountsView.accountList.Where(e => e.UserId == UserId).ToList().ForEach(e => e.Display());
         }
     }
 }

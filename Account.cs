@@ -16,8 +16,9 @@ namespace BankApp
         private readonly AccountCurrencyEnum _accountCurrency;
         private decimal _accountBalance;
         private bool _accountBlockade;
+        private string accountBlockadeStatus(bool status) => status ? "TAK" : "NIE";
 
-        public Account(AccountCurrencyEnum accountCurrency, decimal accountBalance, User userId)
+        public Account(User userId, AccountCurrencyEnum accountCurrency, decimal accountBalance)
         {
             _accountCurrency = accountCurrency;
             _accountBalance = accountBalance;
@@ -28,7 +29,12 @@ namespace BankApp
 
         public void Display()
         {
-            Console.WriteLine($"{_accountNumber};{UserId};{_accountCurrency};{_accountBalance};{_accountBlockade}");
+            Console.WriteLine($"{_accountNumber};{UserId};{_accountCurrency};{_accountBalance};{accountBlockadeStatus(_accountBlockade)}");
+        }
+
+        public void DisplayBalance()
+        {
+            Console.WriteLine($"{UserId}: {_accountBalance} {_accountCurrency}");
         }
 
         public decimal PayIn(decimal deposit)
@@ -52,6 +58,11 @@ namespace BankApp
         public bool UnblockAccount()
         {
             _accountBlockade = false;
+            return _accountBlockade;
+        }
+
+        public bool AccountStatus()
+        {
             return _accountBlockade;
         }
     }
